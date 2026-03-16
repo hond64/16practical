@@ -72,7 +72,19 @@ public class tryHeapsort{
         int right = 2 * i + 2;
         if(left < n && array[left].compareTo(array[largest]) > 0){
             largest = left;
-            
+        }
+        if(right < n && array[right].compareTo(array[largest]) > 0){
+            largest = right;
+        }
+        if(largest != i){
+            String temp = array[i];
+            array[i] = array[largest];
+            array[largest] = temp;
+            heapify(array, n, largest); 
+        }
+    }   
+
+
 
         
 }   
