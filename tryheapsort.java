@@ -3,7 +3,7 @@
 //Practical 16
 import java.util.Arrays;
 
-public class tryHeapsort{
+public class tryheapsort{
     static String[] heap;
     static int size;
 
@@ -83,6 +83,14 @@ public class tryHeapsort{
             heapify(array, n, largest); 
         }
     }   
+    public static void heapsort(String[] array){
+        for(int i = size - 1; i > 0; i--){
+            String temp = array[0];
+            array[0] = array[i];
+            array[i] = temp;
+            heapify(array, i, 0);
+        }
+    }
 
 
 
