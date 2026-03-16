@@ -10,7 +10,9 @@ public class tryHeapsort{
     public static void main(String[] args){
         String[] words = {"cat","dog","banana","zebra","lion","goat","fish","human"};
         String[] bottomUpArray = Arrays.copyOf(words, words.length);
-
+        String[] topDownArray = Arrays.copyOf(words, words.length);
+        System.out.println("Original array: " + Arrays.toString(words));
+        System.out.println(Arrays.toString(words));
     }
 }
 
