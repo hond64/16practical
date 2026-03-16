@@ -37,5 +37,11 @@ public class tryHeapsort{
             heapify(heap, size, i);
         }
     }
+    public static void buildHeapTopDown(String[] array){
+        size = 0;
+        heap = new String[array.length];
+        for(String word : array){
+            insert(word);
+            
 }   
 
