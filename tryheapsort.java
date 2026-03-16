@@ -27,6 +27,15 @@ public class tryHeapsort{
         long endTime2 = System.nanoTime();
         System.out.println("Top-down Heapsort: " + Arrays.toString(topDownArray));
         System.out.println("Top-down Heapsort Time: " + (endTime2 - startTime2) + " nanoseconds");
+
+
     }
-}
+    public static void buildHeapBottomUp(String[] array){
+        size = array.length;
+        heap = Arrays.copyOf(array, size);
+        for(int i = size / 2 - 1; i >= 0; i--){
+            heapify(heap, size, i);
+        }
+    }
+}   
 
