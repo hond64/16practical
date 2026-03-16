@@ -13,6 +13,20 @@ public class tryHeapsort{
         String[] topDownArray = Arrays.copyOf(words, words.length);
         System.out.println("Original array: " + Arrays.toString(words));
         System.out.println(Arrays.toString(words));
+
+        long startTime = System.nanoTime();
+        buildHeapBottomUp(bottomUpArray);
+        heapsort(bottomUpArray);
+        long endTime = System.nanoTime();
+        System.out.println("Bottom-up Heapsort: " + Arrays.toString(bottomUpArray));
+        System.out.println("Bottom-up Heapsort Time: " + (endTime - startTime) + " nanoseconds");       
+
+        long startTime2 = System.nanoTime();
+        buildHeapTopDown(topDownArray);
+        heapsort(topDownArray);
+        long endTime2 = System.nanoTime();
+        System.out.println("Top-down Heapsort: " + Arrays.toString(topDownArray));
+        System.out.println("Top-down Heapsort Time: " + (endTime2 - startTime2) + " nanoseconds");
     }
 }
 
