@@ -42,6 +42,31 @@ public class tryHeapsort{
         heap = new String[array.length];
         for(String word : array){
             insert(word);
-            
+        }
+        for (int i = size / 2 - 1; i >= 0; i--){
+            heapify(heap, size, i);
+        }
+    }
+    public static void insert(String word){
+        if(size == heap.length){
+            throw new IllegalStateException("Heap is full");
+        }
+        heap[size] = word;
+        size++;
+        int currentIndex = size - 1;
+        while(currentIndex > 0){
+            int parentIndex = (currentIndex - 1) / 2;
+            if(heap[currentIndex].compareTo(heap[parentIndex]) > 0){
+                String temp = heap[currentIndex];
+                heap[currentIndex] = heap[parentIndex];
+                heap[parentIndex] = temp;
+                currentIndex = parentIndex;
+            } else {
+                break;
+            }
+        }
+    }
+
+        
 }   
 
